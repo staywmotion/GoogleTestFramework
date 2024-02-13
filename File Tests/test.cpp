@@ -83,3 +83,8 @@ TEST_F(FileUtilsTest, WritesMultipleLinesCorrectly) {
 
     testFile.close();
 }
+
+// TEST SUITE 3
+TEST_F(FileUtilsTest, AppendsMultipleLinesCorrectly) {
+
+}

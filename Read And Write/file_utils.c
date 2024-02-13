@@ -25,13 +25,28 @@ int read_file(const char* source) {
 	return 0;
 }
 
-int write_file(const char* destination, const char* data) {
-	FILE* o_file = fopen(destination, "w");
+int append_file(const char* destination, const char* data) {
+	FILE* o_file = fopen(destination, "a");
 	if(!o_file) {
 		perror("Error opening file!\n");
 		return -1;
 	}
 	if(fputs(data, o_file) == EOF) {
+		perror("Error writing to file");
+		fclose(o_file);
+		return -2;
+	}
+	fclose(o_file);
+	return 0;
+}
+
+int write_file(const char* destination, const char* data) {
+	FILE* o_file = fopen(destination, "w");
+	if (!o_file) {
+		perror("Error opening file!\n");
+		return -1;
+	}
+	if (fputs(data, o_file) == EOF) {
 		perror("Error writing to file");
 		fclose(o_file);
 		return -2;

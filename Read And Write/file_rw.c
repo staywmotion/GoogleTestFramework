@@ -4,6 +4,7 @@
 
 
 int main(void) {
-	int result = read_file("temp.txt");
+	const char* data = "First line of test data.\nSecond line of test data.\nThird line of test data.";
+	write_file("temp.txt", data);
 	return 0;
 }

@@ -10,6 +10,7 @@ extern "C" {
 
 	int read_file(const char* source);
 	int write_file(const char* destination, const char* data);
+	int append_file(const char* destination, const char* data);
 
 #ifdef __cplusplus
 }
